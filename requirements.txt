@@ -70,7 +70,7 @@ prometheus_client==0.20.0
 #pure-eval @ file:///home/conda/feedstock_root/build_artifacts/pure_eval_1642875951954/work
 pycparser==2.22
 #Pygments @ file:///home/conda/feedstock_root/build_artifacts/pygments_1714846767233/work
-pyparsing==3.1.2
+#pyparsing==3.1.2
 #python-dateutil @ file:///home/conda/feedstock_root/build_artifacts/python-dateutil_1709299778482/work
 #python-json-logger==2.0.7
 #pytz==2024.1
