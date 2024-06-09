@@ -9,17 +9,15 @@ import os
 
 class Rossmann(object):
     def __init__(self):
-        self.parameter_path = ''
-        self.competition_distance_scaler = self.load_scaler('competition_distance_scaler.pkl')
-        self.competition_time_month_scaler = self.load_scaler('competition_time_month_scaler.pkl')
-        self.promo_time_week_scaler = self.load_scaler('promo_time_week_scaler.pkl')
-        self.year_scaler = self.load_scaler('year_scaler.pkl')
-        self.store_type_scaler = self.load_scaler('store_type_scaler.pkl')
+        self.home_path = ''
+        self.competition_distance_scaler = pickle.load( open( self.home_path + 'parameter/competition_distance_scaler.pkl','rb'))
+        self.competition_time_month_scaler = pickle.load( open( self.home_path + 'parameter/competition_time_month_scaler.pkl','rb'))
+        self.promo_time_week_scaler = pickle.load( open( self.home_path + 'parameter/promo_time_week_scaler.pkl','rb'))
+        self.year_scaler = pickle.load( open( self.home_path + 'parameter/year_scaler.pkl', 'rb') )
+        self.store_type_scaler = pickle.load( open( self.home_path + 'parameter/store_type_scaler.pkl', 'rb') )
+        state = 1
 
-    def load_scaler(self, filename):
-        with open(os.path.join(self.parameter_path, filename), 'rb') as file:
-            return pickle.load(file)
-  		
+
 
 
 
@@ -77,7 +75,8 @@ class Rossmann(object):
         # promo2
         df1['promo2_since_week'] = df1['promo2_since_week'].astype( int )
         df1['promo2_since_year'] = df1['promo2_since_year'].astype( int )
-        return df1
+        
+	return df1
 
 
     def feature_engineering( self, df2 ):
@@ -117,6 +116,7 @@ class Rossmann(object):
         # 3.0. PASSO 03 - FILTRAGEM DE VARIÁVEIS
         ## 3.1. Filtragem das Linhas
         df2 = df2[df2['open'] != 0]
+	    
         ## 3.2. Selecao das Colunas
         cols_drop = ['open', 'promo_insterval', 'month_map']
         df2 = df2.drop( cols_drop, axis=1 )
@@ -171,4 +171,5 @@ class Rossmann(object):
           pred = model.predict( test_data )
           # join pred into the original data
           original_data['prediction'] = np.expm1( pred )
+	    
           return original_data.to_json( orient='records', date_format='iso' )
