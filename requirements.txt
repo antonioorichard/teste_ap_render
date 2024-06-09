@@ -62,7 +62,7 @@ pandas==2.2.2
 pandocfilters==1.5.1
 #parso @ file:///home/conda/feedstock_root/build_artifacts/parso_1712320355065/work
 #pickleshare @ file:///home/conda/feedstock_root/build_artifacts/pickleshare_1602536217715/work
-pillow==10.3.0
+#pillow==10.3.0
 #platformdirs @ file:///home/conda/feedstock_root/build_artifacts/platformdirs_1713912794367/work
 #prometheus_client==0.20.0
 #prompt-toolkit @ file:///home/conda/feedstock_root/build_artifacts/prompt-toolkit_1702399386289/work
