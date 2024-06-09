@@ -64,7 +64,7 @@ pandocfilters==1.5.1
 #pickleshare @ file:///home/conda/feedstock_root/build_artifacts/pickleshare_1602536217715/work
 pillow==10.3.0
 #platformdirs @ file:///home/conda/feedstock_root/build_artifacts/platformdirs_1713912794367/work
-prometheus_client==0.20.0
+#prometheus_client==0.20.0
 #prompt-toolkit @ file:///home/conda/feedstock_root/build_artifacts/prompt-toolkit_1702399386289/work
 #psutil @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/psutil_1699482842340/work
 #pure-eval @ file:///home/conda/feedstock_root/build_artifacts/pure_eval_1642875951954/work
